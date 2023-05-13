@@ -35,7 +35,7 @@ prompt = PromptTemplate(
     input_variables=["tone", "dialect", "email"],
     template=template,
 )
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = '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'
 def load_LLM(openai_api_key):
     """Logic for loading the chain you want to use should go here."""
     # Make sure your openai_api_key is set as an environment variable
