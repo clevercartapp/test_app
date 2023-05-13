@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain import PromptTemplate
 from langchain.llms import OpenAI
-
+import os
 template = """
     Below is an email that may be poorly worded.
     Your goal is to:
@@ -35,11 +35,11 @@ prompt = PromptTemplate(
     input_variables=["tone", "dialect", "email"],
     template=template,
 )
-
+os.environ["OPENAI_API_KEY"] = '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'
 def load_LLM(openai_api_key):
     """Logic for loading the chain you want to use should go here."""
     # Make sure your openai_api_key is set as an environment variable
-    llm = OpenAI(temperature=.7, openai_api_key=openai_api_key)
+    llm = OpenAI(temperature=.7)
     return llm
 
 st.set_page_config(page_title="Globalize Email", page_icon=":robot:")
